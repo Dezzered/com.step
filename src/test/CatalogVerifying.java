@@ -1,24 +1,33 @@
 import core.TestData;
+import org.junit.Before;
 import org.testng.annotations.Test;
 import pages.*;
 
-import java.util.NoSuchElementException;
-
 /**
  * Created by Englich on 11.11.2017.
- *
  */
 public class CatalogVerifying extends TestData {
-    @Test(priority=0)
-    public void MobileCatalogTest() {
+
+    @Before
+    public void init() {
+        //тут создаешь объеты и передаешь их куда надо
+        TestData data = new TestData();
+        MobileCatalogTest(data);
+
+    }
+
+    @Test(priority = 0)
+    public void MobileCatalogTest(TestData data) {
         MobilePage mobilePage = new CatalogNavigatorPage(driver).goToMobilePage();
         MobilePage mobilePageResult = new MobilePage(driver).isMobilePageOpened();
         CommonCatalogPage commonCatalogPagePageItems = new CommonCatalogPage(driver).isProductsDisplayed();
         CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
         CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
 
+
     }
-    @Test(priority=1)
+
+    @Test(priority = 1)
     public void TabletPcCatalogTest() {
         TabletPcPage tabletPcPage = new CatalogNavigatorPage(driver).goToTabletPcPage();
         tabletPcPage.isTabletPcPageOpened();
@@ -26,7 +35,8 @@ public class CatalogVerifying extends TestData {
         tabletPcPage.isFilterSectionDisplayed();
         tabletPcPage.isAnyFilterExisted();
     }
-    @Test(priority=2)
+
+    @Test(priority = 2)
     public void NotebookCatalogTest() {
         NotebookPage notebookPage = new CatalogNavigatorPage(driver).goToNotebookPage();
         NotebookPage notebookPageResult = new NotebookPage(driver).isNotebookPageOpened();
@@ -34,7 +44,8 @@ public class CatalogVerifying extends TestData {
         CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
         CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
     }
-    @Test(priority=3)
+
+    @Test(priority = 3)
     public void TvCatalogTest() {
         TvPage tvPage = new CatalogNavigatorPage(driver).goToTvPage();
         TvPage tvPageResult = new TvPage(driver).isTvPageOpened();
@@ -42,7 +53,8 @@ public class CatalogVerifying extends TestData {
         CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
         CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
     }
-    @Test(priority=4)
+
+    @Test(priority = 4)
     public void PhotoCatalogTest() {
         PhotoPage photoPage = new CatalogNavigatorPage(driver).goToPhotoPage();
         PhotoPage photoPageResult = new PhotoPage(driver).isPhotoPageOpened();
@@ -50,7 +62,8 @@ public class CatalogVerifying extends TestData {
         CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
         CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
     }
-    @Test(priority=5)
+
+    @Test(priority = 5)
     public void TiresCatalogTest() {
         TiresPage tiresPage = new CatalogNavigatorPage(driver).goToTiresPage();
         TiresPage tiresPageResult = new TiresPage(driver).isTiresPageOpened();
@@ -58,7 +71,8 @@ public class CatalogVerifying extends TestData {
         CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
         CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
     }
-    @Test(priority=6)
+
+    @Test(priority = 6)
     public void RefrigeratorCatalogTest() {
         RefrigeratorPage refrigeratorPage = new CatalogNavigatorPage(driver).goToRefrigeratorPage();
         RefrigeratorPage refrigeratorPageResult = new RefrigeratorPage(driver).isRefrigeratorPageOpened();
@@ -66,7 +80,8 @@ public class CatalogVerifying extends TestData {
         CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
         CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
     }
-    @Test(priority=7)
+
+    @Test(priority = 7)
     public void HeaterCatalogTest() {
         HeaterPage heaterPage = new CatalogNavigatorPage(driver).goToHeaterPage();
         HeaterPage heaterPageResult = new HeaterPage(driver).isHeaterPageOpened();
@@ -74,7 +89,8 @@ public class CatalogVerifying extends TestData {
         CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
         CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
     }
-    @Test(priority=8)
+
+    @Test(priority = 8)
     public void DisplayCatalogTest() {
         DisplayPage displayPage = new CatalogNavigatorPage(driver).goToDisplayPage();
         DisplayPage displayPageResult = new DisplayPage(driver).isDisplayPageOpened();
@@ -82,7 +98,8 @@ public class CatalogVerifying extends TestData {
         CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
         CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
     }
-    @Test(priority=9)
+
+    @Test(priority = 9)
     public void HeadphonesCatalogTest() {
         HeadphonesPage headphonesPage = new CatalogNavigatorPage(driver).goToHeadphonesPage();
         HeadphonesPage headphonesPageResult = new HeadphonesPage(driver).isHeadphonesPageOpened();
@@ -90,7 +107,8 @@ public class CatalogVerifying extends TestData {
         CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
         CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
     }
-    @Test(priority=10)
+
+    @Test(priority = 10)
     public void DesktopPcCatalogTest() {
         DesktopPcPage desktopPcPage = new CatalogNavigatorPage(driver).goToDesktopPcPage();
         DesktopPcPage desktopPcPageResult = new DesktopPcPage(driver).isDesktopPcPageOpened();
@@ -98,7 +116,8 @@ public class CatalogVerifying extends TestData {
         CommonCatalogPage commonCatalogPageItemsFilters = new CommonCatalogPage(driver).isFilterSectionDisplayed();
         CommonCatalogPage commonCatalogPageAnyFilter = new CommonCatalogPage(driver).isAnyFilterExisted();
     }
-    @Test(priority=11)
+
+    @Test(priority = 11)
     public void ActionCameraCatalogTest() {
         ActionCameraPage actionCameraPage = new CatalogNavigatorPage(driver).goToActionCameraPage();
         ActionCameraPage actionCameraPageResult = new ActionCameraPage(driver).isActionCameraPageOpened();
